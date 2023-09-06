@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://app.autoblocks.ai/images/logo.png" width="300px">
+</p>
+
 # Novel Autoblocks Example
 
 Example Next.js application using [`novel`](https://github.com/steven-tey/novel) and [`Autoblocks`](https://www.autoblocks.ai).
@@ -32,6 +36,12 @@ npm run dev
 ```
 
 Visit http://localhost:3000 to see the app.
+
+### View logs in Autoblocks
+
+As you interact with the app, you should see traces appear in the Autoblocks explore page.
+
+![Autoblocks Explore](https://github.com/autoblocksai/novel-autoblocks-example/blob/main/novel-autoblocks-example.png?raw=true)
 
 ## More Information
 

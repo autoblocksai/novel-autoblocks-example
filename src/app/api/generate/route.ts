@@ -55,30 +55,43 @@ export async function POST(req: Request): Promise<Response> {
     properties: { ...openAIRequest, provider: 'openai' },
   });
 
-  const response = await openai.chat.completions.create(openAIRequest);
+  try {
+    const response = await openai.chat.completions.create(openAIRequest);
 
-  // Convert the response into a friendly text-stream
-  const stream = OpenAIStream(response, {
-    onStart: async () => {
-      await sendEventToAutoblocks({
-        eventName: 'ai.stream.start',
-        traceId,
-      });
-    },
-    onFinal: async (completion) => {
-      await sendEventToAutoblocks({
-        eventName: 'ai.stream.finished',
-        traceId,
-        properties: {
-          durationMs: Date.now() - startTimer,
-          completion,
-        },
-      });
-    },
-  });
+    // Convert the response into a friendly text-stream
+    const stream = OpenAIStream(response, {
+      onStart: async () => {
+        await sendEventToAutoblocks({
+          eventName: 'ai.stream.start',
+          traceId,
+        });
+      },
+      onCompletion: async (completion) => {
+        await sendEventToAutoblocks({
+          eventName: 'ai.stream.completion',
+          traceId,
+          properties: {
+            durationMs: Date.now() - startTimer,
+            completion,
+          },
+        });
+      },
+    });
 
-  // Respond with the stream
-  return new StreamingTextResponse(stream);
+    // Respond with the stream
+    return new StreamingTextResponse(stream);
+  } catch (error) {
+    await sendEventToAutoblocks({
+      eventName: 'ai.request.error',
+      traceId,
+      properties: {
+        error,
+      },
+    });
+    return new Response(undefined, {
+      status: 500,
+    });
+  }
 }
 
 const sendEventToAutoblocks = async (args: {
