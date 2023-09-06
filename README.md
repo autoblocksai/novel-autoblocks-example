@@ -39,7 +39,7 @@ Visit http://localhost:3000 to see the app.
 
 ### View logs in Autoblocks
 
-As you interact with the app, you should see traces appear in the Autoblocks explore page.
+As you interact with the app, you will see traces appear in the Autoblocks explore page.
 
 ![Autoblocks Explore](https://github.com/autoblocksai/novel-autoblocks-example/blob/main/novel-autoblocks-example.png?raw=true)
 
