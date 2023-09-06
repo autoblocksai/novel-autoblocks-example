@@ -22,7 +22,7 @@ Sign up for an Autoblocks account at https://app.autoblocks.ai and grab your ing
 
 ### Set environment variables
 
-Create a .env.local file in the root directory of the project with the following environment variables:
+Create a `.env.local` file in the root directory of the project with the following environment variables:
 
 ```
 OPENAI_API_KEY=<your-api-key>
