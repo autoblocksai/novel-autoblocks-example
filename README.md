@@ -4,9 +4,9 @@
 
 # Novel Autoblocks Example
 
-Example Next.js application using [`novel`](https://github.com/steven-tey/novel) and [`Autoblocks`](https://www.autoblocks.ai).
+Example Next.js application using [Novel](https://github.com/steven-tey/novel) and [Autoblocks](https://www.autoblocks.ai), .
 
-Based on [`novella`](https://github.com/steven-tey/novella).
+Based on [novella](https://github.com/steven-tey/novella).
 
 ## Quick Start
 
@@ -46,3 +46,5 @@ As you interact with the app, you will see traces appear in the Autoblocks explo
 ## More Information
 
 For more information on how to use Autoblocks, visit the [Autoblocks documentation](https://docs.autoblocks.ai/).
+
+For more information on how to use Novel, visit the [Novel repository](https://github.com/steven-tey/novel).
