@@ -4,7 +4,7 @@
 
 # Novel Autoblocks Example
 
-Example Next.js application using [Novel](https://github.com/steven-tey/novel) and [Autoblocks](https://www.autoblocks.ai), .
+Example Next.js application using [Novel](https://github.com/steven-tey/novel) and [Autoblocks](https://www.autoblocks.ai).
 
 Based on [novella](https://github.com/steven-tey/novella).
 
